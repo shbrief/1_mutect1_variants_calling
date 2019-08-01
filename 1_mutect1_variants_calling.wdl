@@ -19,9 +19,15 @@ workflow M1_variant_calling {
     }
     
     output {
-        Array[File] var_calls = M1_var.output_pon_vcf
-        Array[File] var_calls_idx = M1_var.output_pon_vcf_index
-        Array[File] var_calls_stats = M1_var.output_pon_stats_txt
+        Array[File] var_calls = M1_var.output_mutect_vcf
+        Array[File] var_calls_idx = M1_var.output_mutect_vcf_index
+        Array[File] var_calls_stats = M1_var.output_mutect_stats_txt
+    }
+
+	meta {
+		author: "Sehyun Oh"
+        email: "shbrief@gmail.com"
+        description: "SNV/SNP calling using MuTect v.1.1.7. Both stats.txt and vcf files are used for PureCN"
     }
 }
 
@@ -61,8 +67,8 @@ task M1_var {
 	}
 
     output {
-        File output_pon_vcf = "${BAM_pre}_pon.vcf"
-        File output_pon_vcf_index = "${BAM_pre}_pon.vcf.idx"        
-        File output_pon_stats_txt = "${BAM_pre}_pon_stats.txt"
+        File output_mutect_vcf = "${BAM_pre}_mutect.vcf"
+        File output_mutect_vcf_index = "${BAM_pre}_mutect.vcf.idx"        
+        File output_mutect_stats_txt = "${BAM_pre}_mutect_stats.txt"
     }
 }
