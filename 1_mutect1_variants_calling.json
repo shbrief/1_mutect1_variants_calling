@@ -1,0 +1,15 @@
+{
+  "M1_variant_calling.M1_var.ref_fasta": "File",
+  "M1_variant_calling.M1_var.cosmicVCF_idx": "File",
+  "M1_variant_calling.M1_var.dbsnp_vcf_idx": "File",
+  "M1_variant_calling.M1_var.cosmicVCF": "File",
+  "M1_variant_calling.tumor_bais": "Array[File]",
+  "M1_variant_calling.M1_var.ref_dict": "File",
+  "M1_variant_calling.tumor_bams": "Array[File]",
+  "M1_variant_calling.M1_var.mutect1_docker": "String",
+  "M1_variant_calling.M1_var.dbsnp_vcf": "File",
+  "M1_variant_calling.normal_bams": "Array[File]? (optional)",
+  "M1_variant_calling.normal_bais": "Array[File]? (optional)",
+  "M1_variant_calling.M1_var.ref_fai": "File"
+}
+
