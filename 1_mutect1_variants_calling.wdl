@@ -17,12 +17,6 @@ workflow M1_variant_calling {
                 tumor_bai = tumor_bai
         }
     }
-    
-    output {
-        Array[File] var_calls = M1_var.output_mutect_vcf
-        Array[File] var_calls_idx = M1_var.output_mutect_vcf_index
-        Array[File] var_calls_stats = M1_var.output_mutect_stats_txt
-    }
 
 	meta {
 		author: "Sehyun Oh"
