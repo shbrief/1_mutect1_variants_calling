@@ -1,23 +1,5 @@
 workflow M1_variant_calling {
-    # inputs
-    Array[File] tumor_bams
-    Array[File] tumor_bais
-    Array[File]? normal_bams
-    Array[File]? normal_bais
-    
-    Array[Pair[File,File]] tumor_bam_pairs = zip(tumor_bams, tumor_bais)
-    
-    scatter (tumor_bam_pair in tumor_bam_pairs) {
-        File tumor_bam = tumor_bam_pair.left
-        File tumor_bai = tumor_bam_pair.right
-        
-        call M1_var {
-            input:
-                tumor_bam = tumor_bam,
-                tumor_bai = tumor_bai
-        }
-    }
-
+    call M1_var
 	meta {
 		author: "Sehyun Oh"
         email: "shbrief@gmail.com"
